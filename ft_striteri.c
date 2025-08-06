@@ -6,7 +6,7 @@
 /*   By: maralves <maralves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 17:01:53 by maralves          #+#    #+#             */
-/*   Updated: 2025/08/04 14:31:21 by maralves         ###   ########.fr       */
+/*   Updated: 2025/08/06 18:17:31 by maralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		f(i, &s[i]);
+		(*f)(i, &s[i]);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: maralves <maralves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:13:59 by maralves          #+#    #+#             */
-/*   Updated: 2025/08/04 16:42:52 by maralves         ###   ########.fr       */
+/*   Updated: 2025/08/06 18:37:57 by maralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (*s1)
 	{
-		if (!char_is_present(*s1, set))
+		if (!char_is_present((char)*s1, set))
 			break ;
 		s1++;
 	}
 	chars_to_copy = ft_strlen((char *)s1);
 	while (chars_to_copy > 0)
 	{
-		if (!char_is_present(s1[chars_to_copy - 1], set))
+		if (!char_is_present((char)s1[chars_to_copy - 1], set))
 			break ;
 		chars_to_copy--;
 	}

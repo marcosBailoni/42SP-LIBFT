@@ -6,7 +6,7 @@
 #    By: maralves <maralves@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/25 15:28:39 by maralves          #+#    #+#              #
-#    Updated: 2025/08/04 16:51:49 by maralves         ###   ########.fr        #
+#    Updated: 2025/08/06 16:12:40 by maralves         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,18 @@ SRC = ft_memchr.c \
 	ft_strlen.c\
       ft_putendl_fd.c
 
+BONUS_SRC = ft_lstnew_bonus.c\
+      ft_lstadd_front_bonus.c\
+      ft_lstsize_bonus.c\
+      ft_lstlast_bonus.c\
+      ft_lstadd_back_bonus.c\
+      ft_lstdelone_bonus.c\
+      ft_lstclear_bonus.c\
+      ft_lstiter_bonus.c\
+      ft_lstmap_bonus.c
+
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -60,8 +71,14 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(NAME) .bonus_built
+
+.bonus_built: $(BONUS_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ)
+	touch .bonus_built
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

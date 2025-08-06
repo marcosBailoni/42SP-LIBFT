@@ -6,7 +6,7 @@
 /*   By: maralves <maralves@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 17:17:23 by maralves          #+#    #+#             */
-/*   Updated: 2025/08/04 16:47:01 by maralves         ###   ########.fr       */
+/*   Updated: 2025/08/06 18:17:25 by maralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	temp;
 
-	if (n == INT_MIN)
+	if (n == -2147483648)
 	{
 		write (fd, "-2147483648", 11);
 		return ;
